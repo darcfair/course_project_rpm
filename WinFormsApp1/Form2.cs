@@ -23,6 +23,12 @@ namespace WinFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             label1.Text = $"{receivedData["maxValue"]} + {((receivedData["plus"] == 1) ? 'g' : 0)}";
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

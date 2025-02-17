@@ -32,5 +32,11 @@ namespace WinFormsApp1
             form2.FormClosed += (s, args) => this.Show();
             form2.Show();
         }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+
+
+        }
     }
 }

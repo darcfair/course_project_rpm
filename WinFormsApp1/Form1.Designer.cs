@@ -20,6 +20,7 @@
             base.Dispose(disposing);
         }
 
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -81,6 +82,7 @@
             checkBox3.TabIndex = 4;
             checkBox3.Text = "checkBox3";
             checkBox3.UseVisualStyleBackColor = true;
+            checkBox3.CheckedChanged += checkBox3_CheckedChanged;
             // 
             // Form1
             // 
