@@ -28,37 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
-            label1 = new Label();
+            label_example = new Label();
+            answer_textBox = new TextBox();
+            button_for_answer = new Button();
+            example_counters = new Label();
+            result_label = new Label();
             SuspendLayout();
             // 
-            // button1
+            // label_example
             // 
-            button1.Location = new Point(150, 102);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            label_example.AutoSize = true;
+            label_example.Location = new Point(325, 154);
+            label_example.Name = "label_example";
+            label_example.Size = new Size(38, 15);
+            label_example.TabIndex = 0;
+            label_example.Text = "label1";
             // 
-            // label1
+            // answer_textBox
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(453, 107);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 1;
-            label1.Text = "label1";
-            label1.Click += label1_Click;
+            answer_textBox.Location = new Point(387, 151);
+            answer_textBox.Name = "answer_textBox";
+            answer_textBox.Size = new Size(58, 23);
+            answer_textBox.TabIndex = 1;
+            // 
+            // button_for_answer
+            // 
+            button_for_answer.Location = new Point(350, 213);
+            button_for_answer.Name = "button_for_answer";
+            button_for_answer.Size = new Size(75, 23);
+            button_for_answer.TabIndex = 2;
+            button_for_answer.Text = "Ответить";
+            button_for_answer.UseVisualStyleBackColor = true;
+            button_for_answer.Click += button_for_answer_Click;
+            // 
+            // example_counters
+            // 
+            example_counters.AutoSize = true;
+            example_counters.Location = new Point(663, 47);
+            example_counters.Name = "example_counters";
+            example_counters.Size = new Size(38, 15);
+            example_counters.TabIndex = 3;
+            example_counters.Text = "label2";
+            // 
+            // result_label
+            // 
+            result_label.AutoSize = true;
+            result_label.Location = new Point(369, 280);
+            result_label.Name = "result_label";
+            result_label.Size = new Size(38, 15);
+            result_label.TabIndex = 4;
+            result_label.Text = "label1";
             // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(result_label);
+            Controls.Add(example_counters);
+            Controls.Add(button_for_answer);
+            Controls.Add(answer_textBox);
+            Controls.Add(label_example);
             Name = "Form2";
             Text = "Form2";
             ResumeLayout(false);
@@ -67,7 +97,10 @@
 
         #endregion
 
-        private Button button1;
-        private Label label1;
+        private Label label_example;
+        private TextBox answer_textBox;
+        private Button button_for_answer;
+        private Label example_counters;
+        private Label result_label;
     }
 }
