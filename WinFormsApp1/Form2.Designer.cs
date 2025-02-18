@@ -38,24 +38,29 @@
             // label_example
             // 
             label_example.AutoSize = true;
-            label_example.Location = new Point(325, 154);
+            label_example.Font = new Font("Segoe UI", 12F);
+            label_example.Location = new Point(334, 205);
             label_example.Name = "label_example";
-            label_example.Size = new Size(38, 15);
+            label_example.Size = new Size(52, 21);
             label_example.TabIndex = 0;
             label_example.Text = "label1";
             // 
             // answer_textBox
             // 
-            answer_textBox.Location = new Point(387, 151);
+            answer_textBox.AcceptsReturn = true;
+            answer_textBox.Font = new Font("Segoe UI", 12F);
+            answer_textBox.Location = new Point(409, 202);
             answer_textBox.Name = "answer_textBox";
-            answer_textBox.Size = new Size(58, 23);
+            answer_textBox.Size = new Size(58, 29);
             answer_textBox.TabIndex = 1;
+            answer_textBox.KeyDown += answer_textBox_KeyDown;
             // 
             // button_for_answer
             // 
-            button_for_answer.Location = new Point(350, 213);
+            button_for_answer.Font = new Font("Segoe UI", 12F);
+            button_for_answer.Location = new Point(356, 264);
             button_for_answer.Name = "button_for_answer";
-            button_for_answer.Size = new Size(75, 23);
+            button_for_answer.Size = new Size(95, 35);
             button_for_answer.TabIndex = 2;
             button_for_answer.Text = "Ответить";
             button_for_answer.UseVisualStyleBackColor = true;
@@ -64,20 +69,21 @@
             // example_counters
             // 
             example_counters.AutoSize = true;
-            example_counters.Location = new Point(663, 47);
+            example_counters.Font = new Font("Segoe UI", 12F);
+            example_counters.Location = new Point(670, 67);
             example_counters.Name = "example_counters";
-            example_counters.Size = new Size(38, 15);
+            example_counters.Size = new Size(52, 21);
             example_counters.TabIndex = 3;
             example_counters.Text = "label2";
             // 
             // result_label
             // 
             result_label.AutoSize = true;
-            result_label.Location = new Point(369, 280);
+            result_label.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            result_label.Location = new Point(109, 106);
             result_label.Name = "result_label";
-            result_label.Size = new Size(38, 15);
+            result_label.Size = new Size(0, 21);
             result_label.TabIndex = 4;
-            result_label.Text = "label1";
             // 
             // Form2
             // 
@@ -90,7 +96,7 @@
             Controls.Add(answer_textBox);
             Controls.Add(label_example);
             Name = "Form2";
-            Text = "Form2";
+            Text = "ReshuPlay";
             ResumeLayout(false);
             PerformLayout();
         }

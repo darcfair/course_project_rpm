@@ -39,10 +39,11 @@ namespace WinFormsApp1
 
         private void generate_new_example()
         {
-            if (current_example >= example_quantity) 
+           
+            if (current_example >= example_quantity)
             {
                 end_play();
-                return; 
+                return;
             } // Проверка на конец примеров
 
             current_example++;
@@ -59,16 +60,18 @@ namespace WinFormsApp1
             switch (example_type)
             {
                 case "plus":
-                    a = random.Next(1, max_answer_value);
-                    b = random.Next(1, max_answer_value - a + 1);
-                    current_сorrect_answer = a + b;
+                    current_сorrect_answer = random.Next(min_answer_value, max_answer_value + 1);
+                    a = random.Next(min_answer_value, current_сorrect_answer);
+                    b = current_сorrect_answer - a;
                     label_example.Text = $"{a} + {b} = ";
+                    label_example.Left= answer_textBox.Location.X - label_example.Width;
                     break;
 
 
                 case "minus":
-                    a = random.Next(1, max_answer_value + 1);
-                    b = random.Next(1, a + 1);
+                    current_сorrect_answer = random.Next(min_answer_value, max_answer_value + 1);
+                    b = random.Next(0, max_answer_value - current_сorrect_answer + 1);
+                    a = current_сorrect_answer + b;
                     current_сorrect_answer = a - b;
                     label_example.Text = $"{a} - {b} = ";
                     break;
@@ -82,7 +85,6 @@ namespace WinFormsApp1
                     break;
             }
             answer_textBox.Clear();
-            result_label.Text = "";
 
 
         }
@@ -95,17 +97,17 @@ namespace WinFormsApp1
                 {
                     correct_answers++;
                     result_label.Text = "Правильно";
-                    System.Threading.Thread.Sleep(3000);
+                    result_label.ForeColor = Color.Green;
                 }
                 else
                 {
                     result_label.Text = $"Неверно! ❌ Правильный ответ: {current_сorrect_answer}";
-                    System.Threading.Thread.Sleep(3000);
+                    result_label.ForeColor = Color.Red;
                 }
                 generate_new_example();
             }
 
-            else 
+            else
             {
                 MessageBox.Show("Введите целое число!", "Ошибка",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -128,6 +130,14 @@ namespace WinFormsApp1
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
             this.Close();
+        }
+
+        private void answer_textBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) 
+            {
+                button_for_answer_Click(sender, e);
+            }
         }
     }
 }
