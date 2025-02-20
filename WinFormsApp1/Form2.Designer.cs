@@ -53,7 +53,7 @@
             answer_textBox.Name = "answer_textBox";
             answer_textBox.Size = new Size(58, 29);
             answer_textBox.TabIndex = 1;
-            answer_textBox.KeyDown += answer_textBox_KeyDown;
+            answer_textBox.KeyPress += answer_textBox_KeyPress;
             // 
             // button_for_answer
             // 
@@ -80,7 +80,7 @@
             // 
             result_label.AutoSize = true;
             result_label.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            result_label.Location = new Point(109, 106);
+            result_label.Location = new Point(117, 110);
             result_label.Name = "result_label";
             result_label.Size = new Size(0, 21);
             result_label.TabIndex = 4;

@@ -26,6 +26,10 @@ namespace WinFormsApp1
         {
             InitializeComponent();
 
+            var screen = Screen.FromControl(this);
+            this.Top = screen.Bounds.Height / 2 - this.Height / 2;
+            this.Left = screen.Bounds.Width / 2 - this.Width / 2;
+
             // Передача данных
             max_answer_value = filter_data["max_answer_value"];
             min_answer_value = filter_data["min_answer_value"];
@@ -39,7 +43,7 @@ namespace WinFormsApp1
 
         private void generate_new_example()
         {
-           
+
             if (current_example >= example_quantity)
             {
                 end_play();
@@ -64,7 +68,7 @@ namespace WinFormsApp1
                     a = random.Next(min_answer_value, current_сorrect_answer);
                     b = current_сorrect_answer - a;
                     label_example.Text = $"{a} + {b} = ";
-                    label_example.Left= answer_textBox.Location.X - label_example.Width;
+                    label_example.Left = answer_textBox.Location.X - label_example.Width;
                     break;
 
 
@@ -132,12 +136,14 @@ namespace WinFormsApp1
             this.Close();
         }
 
-        private void answer_textBox_KeyDown(object sender, KeyEventArgs e)
+        
+
+        private void answer_textBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) 
-            {
-                button_for_answer_Click(sender, e);
-            }
+            if (e.KeyChar == '\r') button_for_answer_Click(sender, e);
+
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) e.Handled = true;
+            
         }
     }
 }

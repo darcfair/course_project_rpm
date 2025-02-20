@@ -49,10 +49,10 @@
             // 
             // start_game_button
             // 
-            start_game_button.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            start_game_button.Location = new Point(145, 201);
+            start_game_button.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold | FontStyle.Italic);
+            start_game_button.Location = new Point(141, 197);
             start_game_button.Name = "start_game_button";
-            start_game_button.Size = new Size(75, 23);
+            start_game_button.Size = new Size(103, 44);
             start_game_button.TabIndex = 0;
             start_game_button.Text = "ИГРАТЬ";
             start_game_button.UseVisualStyleBackColor = true;
@@ -65,6 +65,7 @@
             filter_min_answer_value.Size = new Size(100, 29);
             filter_min_answer_value.TabIndex = 1;
             filter_min_answer_value.Text = "0";
+            filter_min_answer_value.KeyPress += filterBoxs_KeyPress;
             // 
             // filter_check_multiply
             // 
@@ -142,6 +143,7 @@
             filter_max_answer_value.Size = new Size(100, 29);
             filter_max_answer_value.TabIndex = 8;
             filter_max_answer_value.Text = "100";
+            filter_max_answer_value.KeyPress += filterBoxs_KeyPress;
             // 
             // filter_task_quantity
             // 
@@ -150,6 +152,7 @@
             filter_task_quantity.Size = new Size(100, 29);
             filter_task_quantity.TabIndex = 10;
             filter_task_quantity.Text = "5";
+            filter_task_quantity.KeyPress += filterBoxs_KeyPress;
             // 
             // label5
             // 

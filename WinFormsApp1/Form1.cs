@@ -19,15 +19,18 @@ namespace WinFormsApp1
         public Form1()
         {
             InitializeComponent();
+            var screen = Screen.FromControl(this);
+            this.Top = screen.Bounds.Height / 2 - this.Height / 2;
+            this.Left = screen.Bounds.Width / 2 - this.Width / 2;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                
+
                 if (filter_check_minus.Checked == false && filter_check_plus.Checked == false && filter_check_multiply.Checked == false) { throw new Exception(); }
-                
+
                 setting_value["example_quantity"] = int.Parse(filter_task_quantity.Text);
                 setting_value["min_answer_value"] = int.Parse(filter_min_answer_value.Text);
                 setting_value["max_answer_value"] = int.Parse(filter_max_answer_value.Text);
@@ -49,6 +52,11 @@ namespace WinFormsApp1
             form2.FormClosed += (s, args) => this.Show();
             form2.Show();
 
+        }
+
+        private void filterBoxs_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar)) e.Handled = true;
         }
     }
 }
